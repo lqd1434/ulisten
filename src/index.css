@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input[type=range]{
+  margin-top: 8px;/*上部分的填充值*/
+  outline: none;
+  -webkit-appearance: none;/*清除系统默认样式*/
+  background: -webkit-linear-gradient(#FF2D00, #FF2D00) no-repeat, #ddd;  /*背景颜色，俩个颜色分别对应上下，自己尝试下就知道了嗯*/
+  background-size: 60% 100%;/*设置左右宽度比例*/
+  height: 3px;/*横条的高度，细的真的比较好看嗯*/
+}
+/*拖动块的样式*/
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;/*清除系统默认样式*/
+  height:16px;/*拖动块高度*/
+  width: 16px;/*拖动块宽度*/
+  background: #f8f9fa;/*拖动块背景*/
+  border-radius: 50%; /*外观设置为圆形*/
+  border: solid 1px #ddd; /*设置边框*/
 }
