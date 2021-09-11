@@ -18,7 +18,7 @@ input[type=range]{
   outline: none;
   -webkit-appearance: none;/*清除系统默认样式*/
   background: -webkit-linear-gradient(#FF2D00, #FF2D00) no-repeat, #ddd;  /*背景颜色，俩个颜色分别对应上下，自己尝试下就知道了嗯*/
-  background-size: 60% 100%;/*设置左右宽度比例*/
+  /*background-size: 0 100%;!*设置左右宽度比例*!*/
   height: 3px;/*横条的高度，细的真的比较好看嗯*/
 }
 /*拖动块的样式*/

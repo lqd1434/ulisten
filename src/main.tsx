@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import "animate.css"
+import 'animate.css'
+import GaRouterProvider from './components/GaRouterProvider'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<GaRouterProvider>
+		<App />
+	</GaRouterProvider>,
+	document.getElementById('root'),
 )
