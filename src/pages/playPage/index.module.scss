@@ -1,0 +1,88 @@
+
+$outerBoxShadow:3px 4px 3px 3px #988E7A, 4px 5px 2px 8px #DADCDD;
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer {
+  border-radius: 50%;
+  @extend .center;
+  box-shadow:$outerBoxShadow;
+}
+
+.inner{
+  @extend .center;
+  border-radius: 50%;
+}
+
+.iconBg{
+  margin: auto;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow:inset 4px 0 15px 5px #BFC3C4;
+  border: #FFFFFF 2px solid;
+  @extend .center;
+}
+
+.iconBgForCenter{
+  @extend .iconBg;
+  width: 20vw;
+  height: 20vw;
+}
+
+.iconBgForBoth{
+  @extend .iconBg;
+  width: 17vw;
+  height: 17vw;
+}
+
+.playIconOuter{
+  @extend  .outer;
+  width: 16vw;
+  height: 16vw;
+  background:linear-gradient(to right,#F9C339 70%,#AF9A7C);
+}
+.bothIconOuter{
+  @extend  .outer;
+  width: 14vw;
+  height: 14vw;
+  background:linear-gradient(to right,#69C0D8 70%,#48A2AD);
+}
+
+.playIconInner{
+  @extend .inner;
+  width: 13vw;
+  height:13vw;
+  background:linear-gradient(to right,#EAAB34 5%,#FFC416,#FFC416) ;
+}
+
+.bothIconInner{
+  @extend .inner;
+  width: 12vw;
+  height: 12vw;
+  background:linear-gradient(to right,#2EABC9 5%,#56B9D4,#56B9D4) ;
+}
+
+.playIcon{
+  @extend .center;
+  width: 9vw;
+  margin-left: 10px;
+}
+
+.pauseIcon{
+  @extend .center;
+  width: 9vw;
+}
+
+.bothIcon{
+  @extend .center;
+  width: 7vw;
+}
+
+
+
+
+
