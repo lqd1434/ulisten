@@ -4,10 +4,13 @@ import './index.css'
 import App from './App'
 import 'animate.css'
 import GaRouterProvider from './components/GaRouterProvider'
+import { ChakraProvider } from '@chakra-ui/react'
 
 ReactDOM.render(
 	<GaRouterProvider>
-		<App />
+		<ChakraProvider>
+			<App />
+		</ChakraProvider>
 	</GaRouterProvider>,
 	document.getElementById('root'),
 )

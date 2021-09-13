@@ -1,10 +1,14 @@
 import React from 'react'
-import PlayPage from './pages/playPage'
-import { Switch } from 'react-router-dom'
 import { FirstRouter } from './router'
+import Audio from './components/Audio'
 
 function App() {
-	return <FirstRouter />
+	return (
+		<>
+			<FirstRouter />
+			<Audio />
+		</>
+	)
 }
 
 export default App
