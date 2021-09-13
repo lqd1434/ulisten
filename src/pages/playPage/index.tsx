@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { ChevronLeftIcon, Heading, HeartIcon, Pane, VolumeUpIcon } from 'evergreen-ui'
 import PlayIcon from './playIcon'
 import LastIcon from './lastIcon'
 import NextIcon from './nextIcon'
@@ -9,6 +8,10 @@ import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
 import orderIcon from '../../static/icons/suijibofang.svg'
 import musicListIcon from '../../static/icons/yinleliebiao.svg'
+import { Box, Heading, Image, Text } from '@chakra-ui/react'
+import BackIcon from './../../static/icons/fanhui3.svg'
+import HeartIcon from './../../static/icons/xihuan.svg'
+import VolumnIcon from './../../static/icons/volumn.svg'
 
 const PlayPage = () => {
 	const history = useHistory()
@@ -23,62 +26,62 @@ const PlayPage = () => {
 	}, [])
 
 	return (
-		<Pane className={styles.bg}>
-			<Pane
+		<Box w={'100vw'} h={'100vh'} backgroundColor={'#F7DC4F'}>
+			<Box
 				visibility={isShow ? 'visible' : 'hidden'}
 				className={clsx(['animate__animated', ani, styles.con])}
 			>
-				<Pane className={styles.header}>
-					<ChevronLeftIcon
-						marginLeft={20}
+				<Box className={styles.header}>
+					<Box
 						onClick={() => history.push('/')}
-						size={45}
-						backgroundColor={'rgba(244,250,255,0.5)'}
-						padding={5}
-						color={'#FA6C37'}
+						backgroundColor={'#FB9069'}
+						marginLeft={6}
+						padding={3}
 						borderRadius={'50%'}
-					/>
-				</Pane>
-				<Pane className={styles.body}>
+					>
+						<Image src={BackIcon} width={30} alt={''} />
+					</Box>
+				</Box>
+				<Box className={styles.body}>
 					<img src="/src/static/images/cover.jpg" alt="11" className={styles.image} />
-					<Pane marginTop={-20} className={styles.musicInfo} paddingX={15}>
-						<Heading size={800} marginBottom={5}>
+					<Box className={styles.musicInfo}>
+						<Heading size={'md'} marginBottom={3}>
 							清空
 						</Heading>
-						<Pane display={'flex'} alignItems={'center'}>
-							<Heading size={300} marginRight={10}>
+						<Box display={'flex'} alignItems={'center'}>
+							<Text ml={'2px'} fontSize={'14px'} marginRight={3}>
 								鹿晗
-							</Heading>
-							<Heading
+							</Text>
+							<Text
 								color={'black'}
-								size={200}
+								fontSize={'14px'}
 								backgroundColor={'#F5F5F5'}
 								borderRadius={10}
-								padding={2}
+								padding={'3px'}
 							>
 								关注
-							</Heading>
-						</Pane>
-						<Pane paddingTop={20}>这是一句歌词</Pane>
-						<Pane>这又是一句歌词哈哈</Pane>
-					</Pane>
-					<Pane className={styles.operateMenu} paddingX={20}>
-						<HeartIcon size={30} color={'red'} />
+							</Text>
+						</Box>
+						<Box paddingTop={7}>这是一句歌词</Box>
+						<Box paddingTop={2}>这又是一句歌词哈哈</Box>
+					</Box>
+					<Box className={styles.operateMenu} paddingX={'10px'}>
+						<img src={HeartIcon} alt={''} width={30} />
 						<img src={orderIcon} alt={''} width={30} />
-						<VolumeUpIcon size={30} color={'#4646EB'} />
+						<img src={VolumnIcon} alt={''} width={30} />
 						<img src={musicListIcon} alt={''} width={30} />
-					</Pane>
-					<Pane height={'5rem'} alignSelf={'center'}>
+					</Box>
+					<Box height={'5rem'} alignSelf={'center'}>
 						<ProgressBar />
-					</Pane>
-				</Pane>
-				<Pane className={styles.bottom}>
+					</Box>
+				</Box>
+				<Box className={styles.bottom}>
 					<LastIcon />
 					<PlayIcon />
 					<NextIcon />
-				</Pane>
-			</Pane>
-		</Pane>
+				</Box>
+			</Box>
+		</Box>
 	)
 }
 export default PlayPage

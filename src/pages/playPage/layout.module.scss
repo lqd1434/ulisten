@@ -1,68 +1,71 @@
-.bg{
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #F7DC4F;
+//.bg{
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  left: 0;
+//  bottom: 0;
+//  background-color: #F7DC4F;
+//
+//
+//}
+.con{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+  align-items: center;
 
-  .con{
+  .header{
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .body{
+    flex-grow: 1;
+    align-self: center;
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 30px;
-    align-items: center;
 
-    .header{
-      display: flex;
-      flex-direction: row;
-      align-self: start;
-      margin-top: 20px;
-      align-items: center;
-    }
-
-    .body{
-      flex-grow: 1;
+    .image{
       align-self: center;
+      width: 24vh;
+      height: 24vh;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 25px solid black;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .musicInfo{
       display: flex;
       flex-direction: column;
-
-      .image{
-        align-self: center;
-        width: 20vh;
-        height: 20vh;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 25px solid black;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-      }
-      .musicInfo{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        flex-grow: 1;
-      }
-
-      .operateMenu{
-        margin-top: 2rem;
-        align-self: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        flex-grow: 1;
-        align-items: center;
-      }
+      align-items: start;
+      margin-top: -20px;
+      padding: 0 15px;
+      flex-grow: 1;
     }
-    .bottom{
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      justify-content: center;
+
+    .operateMenu{
+      margin-top: 2rem;
+      align-self: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      flex-grow: 1;
       align-items: center;
-      gap: 2.5rem;
     }
+  }
+  .bottom{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
   }
 }

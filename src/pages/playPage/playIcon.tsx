@@ -30,7 +30,7 @@ const PlayIcon = () => {
 		<div className={styles.iconBgForCenter}>
 			<div className={styles.playIconOuter} onClick={handleClick}>
 				<div className={styles.playIconInner}>
-					<img src={playing ? pauseIcon : playIcon} className={iconClass} />
+					<img src={playing ? pauseIcon : playIcon} className={iconClass} alt={''} />
 				</div>
 			</div>
 		</div>

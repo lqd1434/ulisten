@@ -1,10 +1,11 @@
-import { Pane } from 'evergreen-ui'
 import React, { useEffect, useState } from 'react'
 import { emitter } from '../../utils/EventEmiter'
+import { Box, Flex } from '@chakra-ui/react'
 
 const ProgressBar = () => {
 	const [progress, setProgress] = useState('30')
 	const [currentTime, setCurrentTime] = useState('')
+	const [musicDuration, setMusicDuration] = useState('')
 
 	const stateFunc = (e: any) => {
 		setProgress((e.target as EventTarget & HTMLInputElement).value)
@@ -12,7 +13,7 @@ const ProgressBar = () => {
 
 	useEffect(() => {
 		emitter.on<string>('musicDuration', (data) => {
-			console.log(data, 'data')
+			setMusicDuration(data)
 		})
 		emitter.on<string>('musicCurrentTime', (data) => {
 			setCurrentTime(data)
@@ -20,8 +21,8 @@ const ProgressBar = () => {
 	}, [])
 
 	return (
-		<Pane marginTop={30} display={'flex'} paddingX={10}>
-			<Pane width={50}>{currentTime || '00:00'}</Pane>
+		<Flex marginTop={30} paddingX={'5px'}>
+			<Box w={50}>{currentTime || '00:00'}</Box>
 			<input
 				min={0}
 				max={100}
@@ -32,10 +33,8 @@ const ProgressBar = () => {
 				type={'range'}
 				style={{ backgroundSize: `${progress}% 100%`, width: screen.availWidth - 150 }}
 			/>
-			<Pane width={50} paddingLeft={10}>
-				03:10
-			</Pane>
-		</Pane>
+			<Box pl={3}>{musicDuration || '00:00'}</Box>
+		</Flex>
 	)
 }
 
