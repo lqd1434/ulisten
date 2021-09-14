@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import React from 'react'
-import { Box, Center, Flex } from '@chakra-ui/react'
-import BottomNav from '../../components/BottomNav'
+import { Box } from '@chakra-ui/react'
 
 const Home = () => {
 	const history = useHistory()

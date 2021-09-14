@@ -4,7 +4,7 @@ import { emitter } from '../../utils/EventEmiter'
 
 const useGaListener = (gaCode: string) => {
 	const customHistory = createBrowserHistory()
-	ReactGA.initialize('2815518441')
+	ReactGA.initialize(gaCode)
 	customHistory.listen((location) => {
 		emitter.emit<Location<unknown>>('location', location)
 		ReactGA.set({ page: window.location.pathname })
