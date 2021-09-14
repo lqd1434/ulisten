@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useEffect, useRef } from 'react'
 import { emitter } from '../../utils/EventEmiter'
 import { getCurrentTime } from '../../utils/getCurrentTime'
+import musicUrl from './白鸽 - 你的上好佳.mp3'
 
 const Audio = () => {
 	const audioRef = useRef<HTMLAudioElement>(null)
@@ -47,7 +48,7 @@ const Audio = () => {
 			ref={audioRef}
 			onTimeUpdate={throttle(onTimeUpdate)}
 			onCanPlay={onCanPlay}
-			src={'./musics/白鸽 - 你的上好佳.mp3'}
+			src={musicUrl}
 		/>
 	)
 }
