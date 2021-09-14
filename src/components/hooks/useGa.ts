@@ -1,10 +1,12 @@
 import ReactGA from 'react-ga'
-import { createBrowserHistory } from 'history'
+import { createBrowserHistory, Location } from 'history'
+import { emitter } from '../../utils/EventEmiter'
 
 const useGaListener = (gaCode: string) => {
 	const customHistory = createBrowserHistory()
 	ReactGA.initialize('2815518441')
 	customHistory.listen((location) => {
+		emitter.emit<Location<unknown>>('location', location)
 		ReactGA.set({ page: window.location.pathname })
 		ReactGA.pageview(location.pathname + location.search)
 	})

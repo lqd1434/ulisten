@@ -8,10 +8,10 @@ import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
 import orderIcon from '../../static/icons/suijibofang.svg'
 import musicListIcon from '../../static/icons/yinleliebiao.svg'
-import { Box, Heading, Image, Text } from '@chakra-ui/react'
-import BackIcon from './../../static/icons/fanhui3.svg'
+import { Box, Heading, Icon, Text } from '@chakra-ui/react'
 import HeartIcon from './../../static/icons/xihuan.svg'
 import VolumnIcon from './../../static/icons/volumn.svg'
+import { BackIcon } from '../../lib/icons'
 
 const PlayPage = () => {
 	const history = useHistory()
@@ -38,8 +38,9 @@ const PlayPage = () => {
 						marginLeft={6}
 						padding={3}
 						borderRadius={'50%'}
+						textAlign={'center'}
 					>
-						<Image src={BackIcon} width={30} alt={''} />
+						<BackIcon size={20} />
 					</Box>
 				</Box>
 				<Box className={styles.body}>
