@@ -1,7 +1,6 @@
 import React, { SyntheticEvent, useEffect, useRef } from 'react'
 import { emitter } from '../../utils/EventEmiter'
-import musicUrl from '../../static/musics/白鸽 - 你的上好佳.mp3'
-import moment from 'moment'
+import musicUrl from './musics/白鸽 - 你的上好佳.mp3'
 import { getCurrentTime } from '../../utils/getCurrentTime'
 
 const Audio = () => {
