@@ -1,12 +1,11 @@
-import { useHistory } from 'react-router-dom'
 import React from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 
 const Home = () => {
-	const history = useHistory()
 	return (
 		<Box color="white" flexDirection={'column'}>
 			home
+			<Button>加一</Button>
 		</Box>
 	)
 }

@@ -1,16 +1,15 @@
 import React, { SyntheticEvent, useEffect, useRef } from 'react'
 import { emitter } from '../../utils/EventEmiter'
-import { getCurrentTime } from '../../utils/getCurrentTime'
 import musicUrl from './白鸽 - 你的上好佳.mp3'
+import { useMusicPlayStore } from '../../store'
 
 const Audio = () => {
 	const audioRef = useRef<HTMLAudioElement>(null)
+	const { setCurrentTime, setDuration } = useMusicPlayStore((state) => state)
 
 	useEffect(() => {
 		emitter.on<boolean>('toggle', (isPlay) => {
 			if (audioRef.current!.readyState >= 3) {
-				// console.log(audioRef.current!.duration)
-				// console.log(moment('0' + Math.floor(audioRef.current!.duration), 'mm:ss').format('mm:ss'))
 				if (isPlay) {
 					audioRef.current?.play()
 				} else {
@@ -18,7 +17,12 @@ const Audio = () => {
 				}
 			}
 		})
-	})
+
+		emitter.on<number>('currentTime', (data) => {
+			audioRef.current!.currentTime = data
+		})
+	}, [])
+
 	const throttle = (func: (data?: any) => any, time = 800) => {
 		let t: number | null
 		return function (e: SyntheticEvent) {
@@ -31,16 +35,11 @@ const Audio = () => {
 	}
 
 	const onCanPlay = (e: SyntheticEvent) => {
-		const data = getCurrentTime((e.target as HTMLAudioElement).duration)
-		console.log(data, '11')
-		setTimeout(() => {
-			emitter.emit<string>('musicDuration', data)
-		}, 1500)
+		setDuration(Math.round((e.target as HTMLAudioElement).duration))
 	}
 
 	const onTimeUpdate = (e: SyntheticEvent) => {
-		const data = getCurrentTime((e.target as HTMLAudioElement).currentTime)
-		emitter.emit<string>('musicCurrentTime', data)
+		setCurrentTime(Math.round((e.target as HTMLAudioElement).currentTime))
 	}
 
 	return (

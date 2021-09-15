@@ -1,39 +1,59 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { emitter } from '../../utils/EventEmiter'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/react'
+import { useMusicPlayStore } from '../../store'
+import { getCurrentTime } from '../../utils/getCurrentTime'
+import { ThumbIcon } from '../../lib/icons'
 
 const ProgressBar = () => {
-	const [progress, setProgress] = useState('30')
-	const [currentTime, setCurrentTime] = useState('')
-	const [musicDuration, setMusicDuration] = useState('')
+	const { currentTime, duration, setCurrentTime } = useMusicPlayStore((state) => state)
+	const [time, setTime] = useState(0)
 
-	const stateFunc = (e: any) => {
-		setProgress((e.target as EventTarget & HTMLInputElement).value)
+	const onChange = (value: number) => {
+		setTime(value)
+		setCurrentTime(Math.round(value))
 	}
 
-	useEffect(() => {
-		emitter.on<string>('musicDuration', (data) => {
-			setMusicDuration(data)
-		})
-		emitter.on<string>('musicCurrentTime', (data) => {
-			setCurrentTime(data)
-		})
-	}, [])
+	const onChangeEnd = (value: number) => {
+		if (value !== time) {
+			emitter.emit<number>('currentTime', time)
+		} else {
+			emitter.emit<number>('currentTime', value)
+		}
+	}
 
 	return (
 		<Flex marginTop={30} paddingX={'5px'}>
-			<Box w={50}>{currentTime || '00:00'}</Box>
-			<input
+			<Box w={50} mr={2}>
+				{getCurrentTime(currentTime) || '00:00'}
+			</Box>
+			<Slider
+				flex={1}
+				width={'58vw'}
 				min={0}
-				max={100}
-				value={parseInt(progress)}
-				onChange={stateFunc}
-				onTouchEnd={stateFunc}
-				onMouseUp={stateFunc}
-				type={'range'}
-				style={{ backgroundSize: `${progress}% 100%`, width: screen.availWidth - 150 }}
-			/>
-			<Box pl={3}>{musicDuration || '00:00'}</Box>
+				max={duration}
+				onChange={onChange}
+				onChangeEnd={onChangeEnd}
+				value={currentTime}
+				aria-label="slider-ex-4"
+				colorScheme="pink"
+				defaultValue={30}
+			>
+				<SliderTrack bgColor="#FCB59A">
+					<SliderFilledTrack bg="#F74906" />
+				</SliderTrack>
+				<SliderThumb
+					boxSize={5}
+					_focus={{ boxShadow: 'none' }}
+					id={'44'}
+					outline={'none'}
+					boxShadow={'none'}
+					border={'none'}
+				>
+					<Box as={ThumbIcon} />
+				</SliderThumb>
+			</Slider>
+			<Box pl={3}>{getCurrentTime(duration) || '00:00'}</Box>
 		</Flex>
 	)
 }

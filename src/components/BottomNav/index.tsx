@@ -4,6 +4,7 @@ import { GeDanIcon, HomeIcon, TextIcon, TopIcon, UserIcon } from '../../lib/icon
 import { useHistory } from 'react-router-dom'
 import { emitter } from '../../utils/EventEmiter'
 import { Location } from 'history'
+import imgUrl from '/src/static/images/cover.jpg'
 
 const BottomNav = () => {
 	const history = useHistory()
@@ -71,7 +72,7 @@ const BottomNav = () => {
 					color={getColor(2)}
 				/>
 				<Image
-					src="/src/static/images/cover.jpg"
+					src={imgUrl}
 					boxSize={'50px'}
 					borderRadius={'50%'}
 					onClick={() => history.push('/play')}

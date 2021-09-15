@@ -151,3 +151,23 @@ export const UserIcon: React.FC<IconProps> = ({ size = 25, color }) => {
 		</svg>
 	)
 }
+export const ThumbIcon: React.FC<IconProps> = ({ size = 25, color = '#FF3333' }) => {
+	return (
+		<svg
+			d="1631687782533"
+			className="icon"
+			viewBox="0 0 1024 1024"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			p-id="50270"
+			width="16"
+			height="16"
+		>
+			<path
+				d="M512 128v450.133333A170.666667 170.666667 0 1 0 597.333333 725.333333V298.666667h170.666667V128z"
+				p-id="50271"
+				fill={color}
+			/>
+		</svg>
+	)
+}
