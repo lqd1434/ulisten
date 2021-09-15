@@ -6,13 +6,15 @@ import styles from './layout.module.scss'
 import ProgressBar from './progessBar'
 import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
-import orderIcon from '../../static/icons/suijibofang.svg'
-import musicListIcon from '../../static/icons/yinleliebiao.svg'
 import { Box, Heading, Text } from '@chakra-ui/react'
-import HeartIcon from './../../static/icons/xihuan.svg'
-import VolumnIcon from './../../static/icons/volumn.svg'
-import { BackIcon } from '../../lib/icons'
-import imgUrl from '/src/static/images/cover.jpg'
+import {
+	AlbumIcon,
+	BackIcon,
+	HeartIcon,
+	MusicListIcon,
+	PlayOrderIcon,
+	VolumnIcon,
+} from '../../lib/icons'
 
 const PlayPage = () => {
 	const history = useHistory()
@@ -45,7 +47,9 @@ const PlayPage = () => {
 					</Box>
 				</Box>
 				<Box className={styles.body} color={'black'}>
-					<img src={imgUrl} alt="11" className={styles.image} />
+					<Box alignSelf={'center'} my={'2rem'}>
+						<AlbumIcon />
+					</Box>
 					<Box className={styles.musicInfo}>
 						<Heading size={'md'} marginBottom={3}>
 							清空
@@ -68,10 +72,10 @@ const PlayPage = () => {
 						<Box paddingTop={2}>这又是一句歌词哈哈</Box>
 					</Box>
 					<Box className={styles.operateMenu} paddingX={'10px'}>
-						<img src={HeartIcon} alt={''} width={30} />
-						<img src={orderIcon} alt={''} width={30} />
-						<img src={VolumnIcon} alt={''} width={30} />
-						<img src={musicListIcon} alt={''} width={30} />
+						<HeartIcon size={33} />
+						<PlayOrderIcon size={33} color={'#000028'} />
+						<VolumnIcon size={33} color={'#5E64FF'} />
+						<MusicListIcon size={33} color={'#2BC0FF'} />
 					</Box>
 					<Box height={'5rem'} alignSelf={'center'}>
 						<ProgressBar />

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Center, Grid, Image } from '@chakra-ui/react'
-import { GeDanIcon, HomeIcon, TextIcon, TopIcon, UserIcon } from '../../lib/icons'
+import { Box, Center, Grid } from '@chakra-ui/react'
+import { AlbumIcon, GeDanIcon, HomeIcon, TextIcon, TopIcon, UserIcon } from '../../lib/icons'
 import { useHistory } from 'react-router-dom'
 import { emitter } from '../../utils/EventEmiter'
 import { Location } from 'history'
-import imgUrl from '/src/static/images/cover.jpg'
 
 const BottomNav = () => {
 	const history = useHistory()
@@ -71,12 +70,9 @@ const BottomNav = () => {
 					title={'歌单'}
 					color={getColor(2)}
 				/>
-				<Image
-					src={imgUrl}
-					boxSize={'50px'}
-					borderRadius={'50%'}
-					onClick={() => history.push('/play')}
-				/>
+				<Box onClick={() => history.push('/play')}>
+					<AlbumIcon size={8} />
+				</Box>
 				<TextIcon
 					route={'/top'}
 					icon={<TopIcon color={getColor(3)} />}
