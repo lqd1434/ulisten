@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import {
 	Box,
 	Divider,
@@ -42,10 +42,13 @@ const DrawerList = () => {
 					<Divider />
 					<DrawerBody>
 						{musicList.map(({ musicName, singer }, index) => {
-							return <DrawerMusicItem musicName={musicName} singer={singer} index={index} />
+							return (
+								<Fragment key={musicName}>
+									<DrawerMusicItem musicName={musicName} singer={singer} index={index} />
+								</Fragment>
+							)
 						})}
 					</DrawerBody>
-
 					{/*<DrawerFooter>*/}
 					{/*	<Button variant="outline" mr={3} onClick={onClose}>*/}
 					{/*		Cancel*/}
