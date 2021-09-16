@@ -3,12 +3,14 @@ import clsx from 'clsx'
 import pauseIcon from '/src/static/icons/pause.svg'
 import playIcon from '/src/static/icons/play.svg'
 import styles from './index.module.scss'
-import { emitter } from '../../utils/EventEmiter'
+import { emitter } from '../../../utils/EventEmiter'
+import { useMusicPlayStore } from '../../../store'
 
 const PlayIcon = () => {
+	const { isPlaying } = useMusicPlayStore((state) => state)
 	const playClass = clsx([styles.playIcon, 'animate__rotateIn'])
 	const pauseClass = clsx([styles.pauseIcon, 'animate__rotateInUpRight'])
-	const [playing, setPlaying] = useState(false)
+	const [playing, setPlaying] = useState(isPlaying)
 	const [playAni, setPlayAni] = useState('')
 
 	const handleClick = () => {

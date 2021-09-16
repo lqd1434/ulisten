@@ -1,13 +1,3 @@
-//.bg{
-//  position: absolute;
-//  top: 0;
-//  right: 0;
-//  left: 0;
-//  bottom: 0;
-//  background-color: #F7DC4F;
-//
-//
-//}
 .con{
   display: flex;
   flex-direction: column;
@@ -61,11 +51,26 @@
       align-items: center;
     }
   }
-  .bottom{
+
+  .bottom {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
+  }
+}
+
+.albumIconRotate {
+  animation: rotate1 10s linear infinite;
+}
+
+
+@keyframes rotate1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

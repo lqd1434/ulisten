@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { emitter } from '../../utils/EventEmiter'
+import { emitter } from '../../../utils/EventEmiter'
 import { Box, Flex, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/react'
-import { useMusicPlayStore } from '../../store'
-import { getCurrentTime } from '../../utils/getCurrentTime'
-import { ThumbIcon } from '../../lib/icons'
+import { useMusicPlayStore } from '../../../store'
+import { getCurrentTime } from '../../../utils/getCurrentTime'
+import { ThumbIcon } from '../../../lib/icons'
 
 const ProgressBar = () => {
 	const { currentTime, duration, setCurrentTime } = useMusicPlayStore((state) => state)

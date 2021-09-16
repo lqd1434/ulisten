@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import PlayIcon from './playIcon'
-import LastIcon from './lastIcon'
-import NextIcon from './nextIcon'
+import PlayIcon from './components/playIcon'
+import LastIcon from './components/lastIcon'
+import NextIcon from './components/nextIcon'
 import styles from './layout.module.scss'
-import ProgressBar from './progessBar'
+import ProgressBar from './components/progessBar'
 import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
 import { Box, Heading, Text } from '@chakra-ui/react'
@@ -15,11 +15,21 @@ import {
 	PlayOrderIcon,
 	VolumnIcon,
 } from '../../lib/icons'
+import { useMusicListStore, useMusicPlayStore } from '../../store'
+import { emitter } from '../../utils/EventEmiter'
+import DrawerList from './DrawerList'
+
+const musicUrl1 = '/src/static/musics/白鸽 - 你的上好佳.mp3'
+const musicUrl2 = '/src/static/musics/不如 - 秦海清.mp3'
+const musicUrl3 = '/src/static/musics/善变 - 王靖雯不胖.mp3'
+const musicUrl4 = '/src/static/musics/时光洪流 - 程响.mp3'
 
 const PlayPage = () => {
 	const history = useHistory()
 	const [isShow, setShow] = useState(false)
 	const [ani, setAni] = useState('')
+	const { isPlaying } = useMusicPlayStore((state) => state)
+	const setMusicList = useMusicListStore((state) => state.setMusicList)
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -27,6 +37,21 @@ const PlayPage = () => {
 			setShow(true)
 		}, 100)
 	}, [])
+
+	useEffect(() => {
+		setMusicList([
+			{ musicName: '白鸽', singer: '你的上好佳' },
+			{ musicName: '不如', singer: '秦海清' },
+			{
+				musicName: '善变',
+				singer: '王靖雯不胖',
+			},
+		])
+	}, [])
+
+	const openDrawer = () => {
+		emitter.emit<boolean>('openDrawer', true)
+	}
 
 	return (
 		<Box w={'100vw'} h={'100vh'} backgroundColor={'#F7DC4F'}>
@@ -47,7 +72,7 @@ const PlayPage = () => {
 					</Box>
 				</Box>
 				<Box className={styles.body} color={'black'}>
-					<Box alignSelf={'center'} my={'2rem'}>
+					<Box alignSelf={'center'} my={'2rem'} className={isPlaying ? styles.albumIconRotate : ''}>
 						<AlbumIcon />
 					</Box>
 					<Box className={styles.musicInfo}>
@@ -75,7 +100,9 @@ const PlayPage = () => {
 						<HeartIcon size={33} />
 						<PlayOrderIcon size={33} color={'#000028'} />
 						<VolumnIcon size={33} color={'#5E64FF'} />
-						<MusicListIcon size={33} color={'#2BC0FF'} />
+						<Box onClick={openDrawer}>
+							<MusicListIcon size={33} color={'#2BC0FF'} />
+						</Box>
 					</Box>
 					<Box height={'5rem'} alignSelf={'center'}>
 						<ProgressBar />
@@ -87,6 +114,7 @@ const PlayPage = () => {
 					<NextIcon />
 				</Box>
 			</Box>
+			<DrawerList />
 		</Box>
 	)
 }
