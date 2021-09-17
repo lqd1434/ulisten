@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import pauseIcon from '/src/static/icons/pause.svg'
 import playIcon from '/src/static/icons/play.svg'
@@ -25,6 +25,10 @@ const PlayIcon = () => {
 			setPlayAni('')
 		}, 200)
 	}
+
+	useEffect(() => {
+		setPlaying(isPlaying)
+	}, [isPlaying])
 
 	let iconClass = clsx(['animate__animated', playing ? pauseClass : playClass, playAni])
 

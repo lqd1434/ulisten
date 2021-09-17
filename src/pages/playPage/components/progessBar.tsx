@@ -27,33 +27,36 @@ const ProgressBar = () => {
 			<Box w={50} mr={2}>
 				{getCurrentTime(currentTime) || '00:00'}
 			</Box>
-			<Slider
-				flex={1}
-				width={'58vw'}
-				min={0}
-				max={duration}
-				onChange={onChange}
-				onChangeEnd={onChangeEnd}
-				value={currentTime}
-				aria-label="slider-ex-4"
-				colorScheme="pink"
-				defaultValue={30}
-			>
-				<SliderTrack bgColor="#FCB59A">
-					<SliderFilledTrack bg="#F74906" />
-				</SliderTrack>
-				<SliderThumb
-					boxSize={5}
-					_focus={{ boxShadow: 'none' }}
-					id={'44'}
-					outline={'none'}
-					boxShadow={'none'}
-					border={'none'}
+			<Box flex={1}>
+				<Slider
+					width={'56vw'}
+					min={0}
+					max={duration}
+					onChange={onChange}
+					onChangeEnd={onChangeEnd}
+					value={currentTime}
+					aria-label="slider-ex-4"
+					colorScheme="pink"
+					defaultValue={30}
 				>
-					<Box as={ThumbIcon} />
-				</SliderThumb>
-			</Slider>
-			<Box pl={3}>{getCurrentTime(duration) || '00:00'}</Box>
+					<SliderTrack bgColor="#FCB59A">
+						<SliderFilledTrack bg="#F74906" />
+					</SliderTrack>
+					<SliderThumb
+						boxSize={5}
+						_focus={{ boxShadow: 'none' }}
+						id={'44'}
+						outline={'none'}
+						boxShadow={'none'}
+						border={'none'}
+					>
+						<Box as={ThumbIcon} />
+					</SliderThumb>
+				</Slider>
+			</Box>
+			<Box w={55} pl={2}>
+				{getCurrentTime(duration) || '00:00'}
+			</Box>
 		</Flex>
 	)
 }

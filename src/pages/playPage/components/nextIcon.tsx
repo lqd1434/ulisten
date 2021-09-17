@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './index.module.scss'
 import nextIcon from '/src/static/icons/next.svg'
 import clsx from 'clsx'
+import { emitter } from '../../../utils/EventEmiter'
 
 const NextIcon = () => {
 	const [nextAni, setNextAni] = useState('')
@@ -10,6 +11,7 @@ const NextIcon = () => {
 		setTimeout(() => {
 			setNextAni('')
 		}, 300)
+		emitter.emit<number>('changeMusic', 3)
 	}
 
 	return (

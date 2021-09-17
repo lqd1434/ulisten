@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './index.module.scss'
 import lastIcon from '/src/static/icons/last.svg'
 import clsx from 'clsx'
+import { emitter } from '../../../utils/EventEmiter'
 
 const LastIcon = () => {
 	const [lastAni, setLastAni] = useState('')
@@ -11,6 +12,7 @@ const LastIcon = () => {
 		setTimeout(() => {
 			setLastAni('')
 		}, 300)
+		emitter.emit<number>('changeMusic', 1)
 	}
 
 	return (
