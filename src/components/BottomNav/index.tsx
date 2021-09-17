@@ -48,7 +48,13 @@ const BottomNav = () => {
 	}
 
 	return (
-		<Box h={'70px'} bgColor="#F7DC4F" w={'100vw'}>
+		<Box
+			h={'70px'}
+			boxShadow={'0 3px 10px 0 #A68C07'}
+			bgColor="#F7DC4F"
+			w={'100vw'}
+			borderRadius={'1rem 1rem 0 0'}
+		>
 			<Grid
 				templateColumns="repeat(5, 1fr)"
 				alignContent={'space-around'}

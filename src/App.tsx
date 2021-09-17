@@ -7,7 +7,7 @@ import BottomNav from './components/BottomNav'
 function App() {
 	return (
 		<>
-			<Flex w={'100vw'} h={'100vh'} color="white" flexDirection={'column'}>
+			<Flex w={'100vw'} h={'100vh'} bg="#F7DC4F" color="white" flexDirection={'column'}>
 				<Box flex="1" bg="#F7DC4F">
 					<FirstRouter />
 				</Box>
