@@ -15,11 +15,11 @@ const Home = () => {
 			color={'#1A55E9'}
 			justifyContent={'start'}
 		>
-			<Flex w={'100vw'} mt={'1rem'} alignItems={'center'}>
-				<Box>
+			<Flex w={'100vw'} mt={'1rem'} alignItems={'center'} justifyContent={'center'}>
+				<Box flex={1}>
 					<Flex className={styles.logo} alignItems={'center'}>
 						<MusicIcon />
-						<Text ml={2} color={'#1A63A9'} fontWeight={500}>
+						<Text ml={1} color={'#1A63A9'} fontWeight={500}>
 							你听
 						</Text>
 					</Flex>

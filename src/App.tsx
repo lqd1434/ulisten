@@ -52,7 +52,7 @@ const App = () => {
 				[],
 			)}
 			<Center
-				className={clsx(['animate__animated', styles.albumIcon, ani])}
+				className={clsx(['animate__animated', ani, styles.albumIcon])}
 				display={isShow ? 'flex' : 'none'}
 			>
 				<Box onClick={() => history.push('/play')}>

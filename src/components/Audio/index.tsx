@@ -1,13 +1,12 @@
 import React, { SyntheticEvent, useEffect, useRef } from 'react'
 import { emitter } from '../../utils/EventEmiter'
-const musicUrl1 = '/src/static/musics/白鸽 - 你的上好佳.mp3'
-const musicUrl2 = '/src/static/musics/不如 - 秦海清.mp3'
-const musicUrl3 = '/src/static/musics/善变 - 王靖雯不胖.mp3'
-const musicUrl4 = '/src/static/musics/时光洪流 - 程响.mp3'
-const musicList = [musicUrl1, musicUrl2, musicUrl3, musicUrl4]
-
 import { useMusicPlayStore } from '../../store'
-import { m } from 'framer-motion'
+
+const musicUrl1 = 'http://47.103.211.10:9090/static/musics/baige.mp3'
+const musicUrl2 = 'http://47.103.211.10:9090/static/musics/buru.mp3'
+const musicUrl3 = 'http://47.103.211.10:9090/static/musics/shanbian.mp3'
+const musicUrl4 = 'http://47.103.211.10:9090/static/musics/shiguangbeimian.mp3'
+const musicList = [musicUrl1, musicUrl2, musicUrl3, musicUrl4]
 
 const Audio = () => {
 	const audioRef = useRef<HTMLAudioElement>(null)

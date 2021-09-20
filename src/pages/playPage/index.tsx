@@ -19,10 +19,10 @@ import { useMusicListStore, useMusicPlayStore } from '../../store'
 import { emitter } from '../../utils/EventEmiter'
 import DrawerList from './DrawerList'
 
-const musicUrl1 = '/src/static/musics/白鸽 - 你的上好佳.mp3'
-const musicUrl2 = '/src/static/musics/不如 - 秦海清.mp3'
-const musicUrl3 = '/src/static/musics/善变 - 王靖雯不胖.mp3'
-const musicUrl4 = '/src/static/musics/时光洪流 - 程响.mp3'
+const musicUrl1 = 'http://47.103.211.10:9090/static/musics/baige.mp3'
+const musicUrl2 = 'http://47.103.211.10:9090/static/musics/buru.mp3'
+const musicUrl3 = 'http://47.103.211.10:9090/static/musics/shanbian.mp3'
+const musicUrl4 = 'http://47.103.211.10:9090/static/musics/shiguangbeimian.mp3'
 
 const PlayPage = () => {
 	const history = useHistory()
