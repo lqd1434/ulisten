@@ -1,0 +1,45 @@
+
+.numui{
+  border-radius: 28px;
+  background: #F7DC4F;
+  box-shadow:  5px 5px 10px #a89636,
+  -5px -5px 10px #ffff68;
+}
+
+.numuiCollapse{
+  border-radius: 20px;
+  background: #F7DC4F;
+  box-shadow: inset 5px 5px 10px #a89636,
+  inset -5px -5px 10px #ffff68
+}
+
+
+.userInfo{
+  @extend .numui;
+  height: 20vh;
+  align-items: center;
+  padding: 2rem 0  2rem 0;
+  margin: 0 1rem 0 1rem;
+
+  .img{
+    margin-left: 1.5rem;
+    margin-right: 0.8rem;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 50%;
+  }
+}
+
+.musicCard{
+  @extend .numui;
+  border-radius: 20px;
+}
+
+.tabPanel{
+  @extend .numuiCollapse;
+  padding: 1rem;
+  margin: 1rem 1rem 0.8rem 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: blueviolet;
+}
