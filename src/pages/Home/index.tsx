@@ -1,7 +1,9 @@
 import React from 'react'
-import { Box, Flex, SimpleGrid, Square, Text } from '@chakra-ui/react'
+import { Box, Flex, Input, Text } from '@chakra-ui/react'
 import styles from './index.module.scss'
 import { MusicIcon, SearchIcon } from '../../lib/icons'
+import GeDanCards from './GeDanCards'
+import NewMusicItem from './NewMusicItem'
 
 const Home = () => {
 	return (
@@ -22,7 +24,17 @@ const Home = () => {
 						</Text>
 					</Flex>
 				</Box>
-				<Box flex={1} className={styles.title} mx={4} h={'3rem'} />
+				<Box flex={1} className={styles.title} mx={4} h={'3rem'}>
+					<Input
+						placeholder="请输入"
+						h={'2rem'}
+						w={'80%'}
+						bgColor={'transparent'}
+						border={'none'}
+						outline={'none'}
+						_focus={{ outline: 'none' }}
+					/>
+				</Box>
 				<Flex
 					mr={4}
 					className={styles.numui}
@@ -49,23 +61,26 @@ const Home = () => {
 					更多
 				</Text>
 			</Flex>
-			<Box mt={'1.1rem'} w={'95vw'} h={'35vw'} className={styles.numuiCollapse} p={4}>
-				<SimpleGrid justifyItems={'center'} columns={3} mt={1}>
-					<Square className={styles.numui} h={'25vw'} w={'25vw'}>
-						1
-					</Square>
-					<Square className={styles.numui} h={'25vw'} w={'25vw'}>
-						2
-					</Square>
-					<Square className={styles.numui} h={'25vw'} w={'25vw'}>
-						3
-					</Square>
-				</SimpleGrid>
-			</Box>
+			<GeDanCards />
 			<Box ml={4} mt={6} alignSelf={'start'} className={styles.numui} fontSize={14} py={1} px={3}>
 				新歌推荐
 			</Box>
-			<Box flex={1} mt={'1rem'} mb={'1rem'} className={styles.numuiCollapse} w={'95vw'} />
+			<Box
+				flex={1}
+				mt={'1rem'}
+				p={2}
+				pt={4}
+				mb={'1rem'}
+				className={styles.numuiCollapse}
+				w={'95vw'}
+				overflow={'auto'}
+			>
+				<NewMusicItem />
+				<NewMusicItem />
+				<NewMusicItem />
+				<NewMusicItem />
+				<NewMusicItem />
+			</Box>
 		</Flex>
 	)
 }

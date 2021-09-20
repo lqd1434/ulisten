@@ -1,19 +1,22 @@
 
 .numui {
   border-radius: 20px;
-  background: linear-gradient(145deg, #ffeb55, #dec647);
-  box-shadow: 5px 5px 10px #aa9837,
-  -5px -5px 10px #ffff67;
+  background: #f7db50;
+  box-shadow: 5px 5px 10px #aa9737,
+  -5px -5px 10px #ffff69;
 }
 
 .numuiCollapse {
   border-radius: 20px;
-  background: #F7DC4F;
-  box-shadow: inset 5px 5px 10px #aa9837,
-  inset -5px -5px 10px #ffff67;
+  background: #f7db50;
+  box-shadow: inset 5px 5px 10px #aa9737,
+  inset -5px -5px 10px #ffff69;
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 15px;
   background: #F7DC4F;
   box-shadow: inset 5px 5px 10px #aa9837,
@@ -28,4 +31,8 @@
   margin-left: 1.5rem;
 }
 
+.newMusicItem {
+  @extend .numui;
+  border-radius: 10px;
+}
 
