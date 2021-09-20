@@ -376,3 +376,43 @@ export const TimeIcon: React.FC<IconProps> = ({ size = 25, color = '#6CA4FC' }) 
 		</svg>
 	)
 }
+export const MusicIcon: React.FC<IconProps> = ({ size = 25, color = '#4D6AFF' }) => {
+	return (
+		<svg
+			d="1632124889794"
+			className="icon"
+			viewBox="0 0 1024 1024"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			p-id="11516"
+			width={size}
+			height={size}
+		>
+			<path
+				d="M512 128v450.346667c-25.173333-14.72-54.186667-23.68-85.333333-23.68-94.293333 0-170.666667 76.373333-170.666667 170.666666s76.373333 170.666667 170.666667 170.666667 170.666667-76.373333 170.666666-170.666667V298.666667h170.666667V128H512z"
+				p-id="11517"
+				fill={color}
+			/>
+		</svg>
+	)
+}
+export const SearchIcon: React.FC<IconProps> = ({ size = 25, color = '#4D6AFF' }) => {
+	return (
+		<svg
+			d="1632126542039"
+			className="icon"
+			viewBox="0 0 1024 1024"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			p-id="12356"
+			width={size}
+			height={size}
+		>
+			<path
+				d="M400.704 801.408A400.64 400.64 0 1 1 400.704 0a400.64 400.64 0 0 1 0 801.408z m0-89.024a311.68 311.68 0 1 0 0-623.36 311.68 311.68 0 0 0 0 623.36z m267.264-110.4l314.752 314.88-62.912 62.912-314.816-314.816 62.976-62.976z"
+				fill={color}
+				p-id="12357"
+			/>
+		</svg>
+	)
+}
