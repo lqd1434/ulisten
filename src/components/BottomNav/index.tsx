@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Center, Grid } from '@chakra-ui/react'
-import { AlbumIcon, GeDanIcon, HomeIcon, TextIcon, TopIcon, UserIcon } from '../../lib/icons'
+import { GeDanIcon, HomeIcon, TextIcon, TopIcon, UserIcon } from '../../lib/icons'
 import { useHistory } from 'react-router-dom'
 import { emitter } from '../../utils/EventEmiter'
 import { Location } from 'history'
+import styles from './index.module.scss'
 
 const BottomNav = () => {
 	const history = useHistory()
@@ -49,48 +50,54 @@ const BottomNav = () => {
 
 	return (
 		<Box
-			h={'70px'}
+			h={'80px'}
+			py={'5px'}
 			boxShadow={'0 3px 10px 0 #A68C07'}
 			bgColor="#F7DC4F"
 			w={'100vw'}
 			borderRadius={'1rem 1rem 0 0'}
 		>
 			<Grid
-				templateColumns="repeat(5, 1fr)"
+				templateColumns="repeat(4, 1fr)"
 				alignContent={'space-around'}
 				alignItems={'center'}
 				justifyItems={'center'}
 				justifyContent={'space-around'}
 			>
 				<Center h={'70px'}>
+					<Center h={'60px'} w={'60px'} className={styles.numui}>
+						<TextIcon
+							route={'/'}
+							icon={<HomeIcon color={getColor(1)} />}
+							color={getColor(1)}
+							title={'主页'}
+						/>
+					</Center>
+				</Center>
+				<Center h={'60px'} w={'60px'} className={styles.numui}>
 					<TextIcon
-						route={'/'}
-						icon={<HomeIcon color={getColor(1)} />}
-						color={getColor(1)}
-						title={'主页'}
+						route={'/geDan'}
+						icon={<GeDanIcon color={getColor(2)} />}
+						title={'歌单'}
+						color={getColor(2)}
 					/>
 				</Center>
-				<TextIcon
-					route={'/geDan'}
-					icon={<GeDanIcon color={getColor(2)} />}
-					title={'歌单'}
-					color={getColor(2)}
-				/>
-				<Box onClick={() => history.push('/play')}>
-					<AlbumIcon size={8} />
-				</Box>
-				<TextIcon
-					route={'/top'}
-					icon={<TopIcon color={getColor(3)} />}
-					title={'榜单'}
-					color={getColor(3)}
-				/>
-				<TextIcon
-					route={'/mine'}
-					icon={<UserIcon color={getColor(4)} />}
-					title={'我的'}
-					color={getColor(4)}
-				/>
+				<Center h={'60px'} w={'60px'} className={styles.numui}>
+					<TextIcon
+						route={'/top'}
+						icon={<TopIcon color={getColor(3)} />}
+						title={'榜单'}
+						color={getColor(3)}
+					/>
+				</Center>
+				<Center h={'60px'} w={'60px'} className={styles.numui}>
+					<TextIcon
+						route={'/mine'}
+						icon={<UserIcon color={getColor(4)} />}
+						title={'我的'}
+						color={getColor(4)}
+					/>
+				</Center>
 			</Grid>
 		</Box>
 	)

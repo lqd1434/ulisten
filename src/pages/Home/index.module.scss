@@ -26,7 +26,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-    .img{
+    .img {
       object-fit: cover;
       border-radius: 50%;
       height: 50px;
@@ -34,4 +34,13 @@
     }
   }
 
+}
+
+.numui {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #dec647, #ffeb55);
+  box-shadow: 25px 25px 50px #ad9a37,
+  -25px -25px 50px #ffff67;
 }

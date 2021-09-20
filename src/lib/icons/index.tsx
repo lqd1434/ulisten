@@ -29,7 +29,7 @@ export const TextIcon: React.FC<TextIconProps> = ({
 	}
 
 	const handleClick = (e: SyntheticEvent) => {
-		setAni('animate__bounce')
+		setAni('animate__rubberBand')
 		history.push(route)
 		setTimeout(() => {
 			setAni('')
