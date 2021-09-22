@@ -1,27 +1,33 @@
 
 .numui{
   border-radius: 28px;
-  background: #F7DC4F;
-  box-shadow:  5px 5px 10px #a89636,
-  -5px -5px 10px #ffff68;
+  background: #5E5ACC;
+  box-shadow: 12px 12px 14px #504dad,
+  -12px -12px 14px #6c68eb;
 }
 
-.numuiCollapse{
+.numuiCollapse {
   border-radius: 20px;
-  background: #F7DC4F;
-  box-shadow: inset 5px 5px 10px #a89636,
-  inset -5px -5px 10px #ffff68
+  background: #8585D8;
+  box-shadow: inset 12px 12px 14px #7171b8,
+  inset -12px -12px 14px #9999f8;
+}
+
+.tapHeader {
+  border-radius: 20px;
+  background: linear-gradient(90deg, #7675C9 50%, #5150BB 100%);
+  box-shadow: 3px 3px 10px #B5E6FC;
 }
 
 
-.userInfo{
+.userInfo {
   @extend .numui;
   height: 20vh;
   align-items: center;
-  padding: 2rem 0  2rem 0;
+  padding: 2rem 0 2rem 0;
   margin: 0 1rem 0 1rem;
 
-  .img{
+  .img {
     margin-left: 1.5rem;
     margin-right: 0.8rem;
     width: 22vw;
@@ -30,12 +36,14 @@
   }
 }
 
-.musicCard{
-  @extend .numui;
+.musicCard {
   border-radius: 20px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  box-shadow: 3px 3px 10px rgb(238, 174, 202);
 }
 
-.tabPanel{
+.tabPanel {
   @extend .numuiCollapse;
   padding: 1rem;
   margin: 1rem 1rem 0.8rem 1rem;

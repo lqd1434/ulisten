@@ -12,14 +12,14 @@ const Home = () => {
 			height={'calc(100vh - 80px)'}
 			flexDirection={'column'}
 			alignItems={'center'}
-			color={'#1A55E9'}
+			color={'white'}
 			justifyContent={'start'}
 		>
 			<Flex w={'100vw'} mt={'1rem'} alignItems={'center'} justifyContent={'center'}>
-				<Box flex={1}>
+				<Box flex={1} color={'white'}>
 					<Flex className={styles.logo} alignItems={'center'}>
-						<MusicIcon />
-						<Text ml={1} color={'#1A63A9'} fontWeight={500}>
+						<MusicIcon color={'#C8C8F7'} />
+						<Text ml={1} fontWeight={500}>
 							你听
 						</Text>
 					</Flex>
@@ -29,6 +29,7 @@ const Home = () => {
 						placeholder="请输入"
 						h={'2rem'}
 						w={'80%'}
+						color={'white'}
 						bgColor={'transparent'}
 						border={'none'}
 						outline={'none'}
@@ -43,7 +44,7 @@ const Home = () => {
 					alignItems={'center'}
 					justifyContent={'center'}
 				>
-					<SearchIcon />
+					<SearchIcon color={'white'} />
 				</Flex>
 			</Flex>
 			<Flex

@@ -10,15 +10,15 @@ const NewMusicItem = () => {
 				1
 			</Box>
 			<Box flex={1} display={'flex'} flexDirection={'column'}>
-				<Box fontSize={16} fontWeight={500} color={'#8F8FFF'}>
+				<Box fontSize={16} fontWeight={500} color={'#FFFFFF'}>
 					时光洪流
 				</Box>
-				<Box fontSize={13} color={'#808080'}>
+				<Box fontSize={13} color={'#CBCBF4'}>
 					程响
 				</Box>
 			</Box>
 			<Box w={'3rem'} padding={'10px'}>
-				<MoreIcon />
+				<MoreIcon color={'#CBCBF4'} />
 			</Box>
 		</Flex>
 	)

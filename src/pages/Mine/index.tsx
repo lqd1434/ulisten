@@ -17,7 +17,7 @@ const Mine = () => {
 					display={'flex'}
 					alignItems={'center'}
 					colorScheme="green"
-					className={styles.numui}
+					className={styles.tapHeader}
 					lazyBehavior={'keepMounted'}
 					isLazy
 					mx={3}

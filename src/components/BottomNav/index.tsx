@@ -41,9 +41,9 @@ const BottomNav = () => {
 	const getColor = (code: number): string => {
 		let color: string
 		if (activeRoute === code) {
-			color = '#5E64FF'
+			color = '#F6F5FC'
 		} else {
-			color = '#A8A9A8'
+			color = '#7F7FDA'
 		}
 		return color
 	}
@@ -52,8 +52,8 @@ const BottomNav = () => {
 		<Box
 			h={'80px'}
 			py={'5px'}
-			boxShadow={'0 3px 10px 0 #A68C07'}
-			bgColor="#F7DC4F"
+			boxShadow={'0 3px 10px 0 #7F7FDA'}
+			bgColor="#7F7FDA"
 			w={'100vw'}
 			borderRadius={'1rem 1rem 0 0'}
 		>

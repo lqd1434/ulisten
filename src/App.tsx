@@ -34,8 +34,8 @@ const App = () => {
 
 	const MainArea = () => {
 		return (
-			<Flex w={'100vw'} h={'100vh'} bg="#F7DC4F" color="white" flexDirection={'column'}>
-				<Box flex="1" bg="#F7DC4F">
+			<Flex w={'100vw'} h={'100vh'} bg={'#7F7FDA'} color={'white'} flexDirection={'column'}>
+				<Box flex="1" bgColor={'#7F7FDAF'}>
 					<FirstRouter />
 				</Box>
 				<BottomNav />
