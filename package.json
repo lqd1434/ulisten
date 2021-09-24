@@ -17,6 +17,7 @@
     "framer-motion": "^4",
     "moment": "^2.29.1",
     "react": "^17.0.0",
+    "react-content-loader": "^6.0.3",
     "react-dom": "^17.0.0",
     "react-ga": "^3.3.0",
     "react-router-dom": "^5.3.0",
