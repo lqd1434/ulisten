@@ -16,7 +16,7 @@ const Mine = () => {
 					pl={3}
 					display={'flex'}
 					alignItems={'center'}
-					colorScheme="green"
+					colorScheme="twitter"
 					className={styles.tapHeader}
 					lazyBehavior={'keepMounted'}
 					isLazy

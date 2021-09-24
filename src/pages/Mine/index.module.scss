@@ -14,9 +14,10 @@
 }
 
 .tapHeader {
+  @extend .numui;
   border-radius: 20px;
-  background: linear-gradient(90deg, #7675C9 50%, #5150BB 100%);
-  box-shadow: 3px 3px 10px #B5E6FC;
+  //background: linear-gradient(90deg, #7675C9 50%, #5150BB 100%);
+  //box-shadow: 3px 3px 10px #B5E6FC;
 }
 
 
@@ -37,10 +38,11 @@
 }
 
 .musicCard {
+  @extend .numui;
   border-radius: 20px;
-  background: rgb(238, 174, 202);
-  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-  box-shadow: 3px 3px 10px rgb(238, 174, 202);
+  //background: rgb(238, 174, 202);
+  //background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  //box-shadow: 3px 3px 10px rgb(238, 174, 202);
 }
 
 .tabPanel {
