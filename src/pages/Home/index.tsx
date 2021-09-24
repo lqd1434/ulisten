@@ -3,7 +3,7 @@ import { Box, Flex, Input, Text } from '@chakra-ui/react'
 import styles from './index.module.scss'
 import { MusicIcon, SearchIcon } from '../../lib/icons'
 import GeDanCards from './GeDanCards'
-import NewMusicItem from './NewMusicItem'
+import NewMusicList from './NewMusicList'
 
 const Home = () => {
 	return (
@@ -66,22 +66,7 @@ const Home = () => {
 			<Box ml={4} mt={6} alignSelf={'start'} className={styles.numui} fontSize={14} py={1} px={3}>
 				新歌推荐
 			</Box>
-			<Box
-				flex={1}
-				mt={'1rem'}
-				p={2}
-				pt={4}
-				mb={'1rem'}
-				className={styles.numuiCollapse}
-				w={'95vw'}
-				overflow={'auto'}
-			>
-				<NewMusicItem />
-				<NewMusicItem />
-				<NewMusicItem />
-				<NewMusicItem />
-				<NewMusicItem />
-			</Box>
+			<NewMusicList />
 		</Flex>
 	)
 }
