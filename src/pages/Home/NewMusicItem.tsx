@@ -19,7 +19,7 @@ const NewMusicItem: React.FC<NewMusicItemProps> = ({ index = 0, name = '', singe
 				<Box fontSize={16} fontWeight={500} color={'#FFFFFF'}>
 					{name}
 				</Box>
-				<Box fontSize={13} color={'#CBCBF4'}>
+				<Box fontSize={13} color={'#C4D6DB'}>
 					{singer}
 				</Box>
 			</Box>
